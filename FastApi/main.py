@@ -75,7 +75,7 @@ async def create_item(item: Item):
     DB[_id] = item
     return {"id": _id, "item": item}
 
-# 7) Delete item
+#  Delete item
 @app.delete("/items/{item_id}", status_code=204)
 async def delete_item(item_id: int = Path(..., ge=1)):
     if DB.pop(item_id, None) is None:
